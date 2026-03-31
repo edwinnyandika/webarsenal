@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- BANNER -->
-<img src="og-banner.jpeg" alt="WebArsenal Banner" width="100%" />
+<img src="og-banner.jpg" alt="WebArsenal Banner" width="100%" />
 
 <br/>
 
