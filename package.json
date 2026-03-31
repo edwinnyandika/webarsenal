@@ -1,0 +1,24 @@
+{
+  "name": "webarsenal",
+  "version": "3.0.0",
+  "description": "The Ultimate Web Scraping & Mirroring Toolkit",
+  "scripts": {
+    "start": "node core/super-mirror.js --help"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cli-progress": "^3.12.0",
+    "commander": "^11.1.0",
+    "mime-types": "^2.1.35",
+    "p-limit": "^3.1.0",
+    "puppeteer": "^21.6.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-adblocker": "^2.13.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "website-scraper": "^5.3.1",
+    "website-scraper-puppeteer": "^1.1.0"
+  },
+  "author": "edwinnyandika",
+  "license": "MIT"
+}
