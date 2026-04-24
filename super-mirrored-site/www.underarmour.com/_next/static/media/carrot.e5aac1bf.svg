@@ -1,0 +1,13 @@
+<svg width="56" height="56" viewBox="20 20 56 56" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <circle id="otcbubpidb" cx="28" cy="28" r="28"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero" transform="translate(20 20)">
+            <use fill="#000" filter="url(#xbdl2du58a)" xlink:href="#otcbubpidb"/>
+            <use fill="#FFF" xlink:href="#otcbubpidb"/>
+        </g>
+        <path d="M32 32h32v32H32z"/>
+        <path d="m34 55 13.988-13.988a.018.018 0 0 1 .024 0L62 55h0" stroke="#1D1D1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+</svg>

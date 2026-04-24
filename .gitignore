@@ -1,1 +1,7 @@
-node_modules/\n*.log\n.DS_Store\ndownloads/\nmirrored-sites/\n
+node_modules/
+*.log
+.DS_Store
+downloads/
+mirrored-sites/
+node_modules/
+node_modules/

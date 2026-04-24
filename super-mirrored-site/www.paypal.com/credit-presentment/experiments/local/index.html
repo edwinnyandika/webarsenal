@@ -1,0 +1,105 @@
+
+                <!DOCTYPE html>
+                <head>
+                </head>
+                <body>
+                    <script data-uid="uid_ucwshvrxzthtvnqisgxhfhvbmwrjhj">(function createSdkScript(formattedSdkUrl, allowedAttrs) {
+  function htmlDecode(text) {
+    return text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&#x2F;/g, '/');
+  }
+  function grabQueryParameters() {
+    return window.location.search.substr(1).split('&').reduce(function (acc, param) {
+      const splitParams = param.split('=');
+      const key = splitParams[0];
+      const value = splitParams[1];
+      acc[key] = value;
+      return acc;
+    }, {});
+  }
+  function getSDKScriptAttributes(allAttrs) {
+    const attrs = {};
+    Object.keys(allAttrs).forEach(function (key) {
+      if (allowedAttrs.indexOf(key) > -1 && /^[a-zA-Z0-9.-_=,]*$/.test(allAttrs[key])) {
+        attrs[key] = allAttrs[key];
+      }
+    });
+    return attrs;
+  }
+  const queryParams = grabQueryParameters();
+  const sdkPath = htmlDecode(formattedSdkUrl);
+  let attrs;
+  let sdkQueryParams;
+  if (queryParams.sdkMeta) {
+    let parsedSdkMeta;
+    let clientSideUrl;
+    try {
+      parsedSdkMeta = JSON.parse(atob(decodeURIComponent(queryParams.sdkMeta)));
+      clientSideUrl = parsedSdkMeta.url;
+      attrs = parsedSdkMeta.attrs;
+    } catch (error) {
+      throw new Error('Invalid sdkMeta');
+    }
+    if (!parsedSdkMeta || !clientSideUrl || !attrs) {
+      throw new Error('Invalid sdkMeta');
+    }
+    const a = document.createElement('a');
+    a.href = clientSideUrl;
+    sdkQueryParams = a.search;
+    if (!sdkQueryParams) {
+      throw new Error('Invalid sdkMeta');
+    }
+  } else {
+    attrs = {
+      'data-uid': queryParams.scriptUID
+    };
+    sdkQueryParams = '';
+  }
+  const validAttrs = getSDKScriptAttributes(attrs);
+  const script = document.createElement('script');
+  script.setAttribute('src', sdkPath + sdkQueryParams);
+  script.onload = () => {
+    if (typeof window.onSdkLoad === 'function') {
+      window.onSdkLoad();
+    }
+  };
+  Object.keys(validAttrs).forEach(function (key) {
+    script.setAttribute(key, validAttrs[key]);
+  });
+  document.body.appendChild(script);
+})('https:&#x2F;&#x2F;www.paypal.com&#x2F;sdk&#x2F;js', ["data-amount","data-client-token","data-merchant-id","data-partner-attribution-id","data-enable-3ds","data-sdk-integration-source","data-client-metadata-id","data-uid"])</script>
+                    <script>
+                function retrieveTreatments() {
+                    try {
+                        const deviceID = window.xprops.deviceID;
+
+                        if (!deviceID) {
+                            window.xprops.onReady({});
+                            window.xprops.close();
+                            return;
+                        }
+
+                        let url = window.location.origin + '/credit-presentment/experiments/hash?device_id=' + deviceID;
+                        if (window.xprops.disableSetCookie) {
+                            url += '&disableSetCookie=' + window.xprops.disableSetCookie;
+                            url += '&features=' + window.xprops.features;
+                        }
+                        fetch(url)
+                            .then((response) => response.text())
+                            .then((treatmentsHash) => {
+                                window.xprops.onReady({ treatmentsHash });
+                                window.xprops.close();
+                            });
+                    } catch {
+                        window.xprops.onReady({});
+                        window.xprops.close();
+                    }
+                }
+
+                if (typeof window.xprops !== 'undefined') {
+                    retrieveTreatments();
+                } else {
+                    window.onSdkLoad = () => retrieveTreatments();
+                }
+            </script>
+                </body>
+            

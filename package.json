@@ -1,23 +1,29 @@
 {
   "name": "webarsenal",
-  "version": "3.0.0",
+  "version": "4.1.0",
   "description": "The Ultimate Web Scraping & Mirroring Toolkit",
   "scripts": {
-    "start": "node core/super-mirror.js --help"
+    "start": "node core/super-mirror.js --help",
+    "repair:stubs": "node tools/repair-stubs.mjs",
+    "test": "node --test tests/smoke.test.js"
   },
   "dependencies": {
+    "adm-zip": "^0.5.16",
     "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.12",
     "cli-progress": "^3.12.0",
     "commander": "^11.1.0",
     "mime-types": "^2.1.35",
     "p-limit": "^3.1.0",
-    "puppeteer": "^21.6.0",
+    "playwright": "^1.53.2",
+    "playwright-extra": "^4.3.6",
+    "puppeteer": "^24.40.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-adblocker": "^2.13.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
-    "website-scraper": "^5.3.1",
-    "website-scraper-puppeteer": "^1.1.0"
+    "sql.js": "^1.13.0",
+    "website-scraper": "^6.0.0",
+    "website-scraper-puppeteer": "^2.0.0"
   },
   "author": "edwinnyandika",
   "license": "MIT"

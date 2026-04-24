@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
  * ╔═══════════════════════════════════════════════════════════════╗
- * ║        SITE MIRROR LIGHT  v3.0.0  — Fast CLI Scraper           ║
+ * ║        SITE MIRROR LIGHT  v4.1.0  — Fast CLI Scraper           ║
  * ║  Website-scraper based · Depth Control · Filter · Sitemap    ║
  * ╚═══════════════════════════════════════════════════════════════╝
  */
 
 'use strict';
-// [WebArsenal 3.0.0 Enhancements applied: Rate Limiting, Retries, Custom Headers]
+// [WebArsenal 4.1.0 Enhancements applied: Rate Limiting, Retries, Custom Headers]
 
 const scrape        = require('website-scraper');
 const { program }   = require('commander');
@@ -20,7 +20,7 @@ const { URL }       = require('url');
 program
   .name('site-mirror-light')
   .description('Fast, lightweight site recursive downloader based on website-scraper')
-  .version('3.0.0')
+  .version('4.1.0')
   .requiredOption('-u, --url <url>',      'Target site URL')
   .option('-o, --output <dir>',           'Output directory',              './site-mirrored')
   .option('-d, --depth <n>',              'Max recursion depth',           parseInt, 3)
@@ -42,7 +42,7 @@ const ua = opts.userAgent || 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb
 
 console.log(chalk.bold.yellow(`
 ╔══════════════════════════════════════════════╗
-║    SITE MIRROR LIGHT  v3.0.0  ⚡               ║
+║    SITE MIRROR LIGHT  v4.1.0  ⚡               ║
 ║  Fast Downloader · Depth Control · Filter    ║
 ╚══════════════════════════════════════════════╝`));
 
@@ -90,7 +90,7 @@ scrape(scrapeOptions).then((result) => {
   // Generate Report
   fs.mkdirSync(META_DIR, { recursive: true });
   const report = {
-    tool: 'Site Mirror Light v3.0.0',
+    tool: 'Site Mirror Light v4.1.0',
     target: siteUrl,
     timestamp: new Date().toISOString(),
     duration: elapsed + 's',
@@ -116,3 +116,4 @@ scrape(scrapeOptions).then((result) => {
   console.error(chalk.red("  ✖ An error occurred during mirroring:"), err.message);
   process.exit(1);
 });
+

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
  * ╔═══════════════════════════════════════════════════════════════╗
- * ║     WEB MIRROR PRO  v3.0.0  — SPA-Optimized Full Cloner        ║
+ * ║     WEB MIRROR PRO  v4.1.0  — SPA-Optimized Full Cloner        ║
  * ║  Puppeteer Rendering · Scroll · Concurrent · Deep Recursive  ║
  * ╚═══════════════════════════════════════════════════════════════╝
  */
 
 'use strict';
-// [WebArsenal 3.0.0 Enhancements applied: Cookie Jar, Multi-URL Seed]
+// [WebArsenal 4.1.0 Enhancements applied: Cookie Jar, Multi-URL Seed]
 
 const scrape          = require('website-scraper');
 const PuppeteerPlugin = require('website-scraper-puppeteer');
@@ -19,7 +19,7 @@ const fs              = require('fs');
 program
   .name('web-mirror-pro')
   .description('SPA-optimized full-site cloner powered by headless Puppeteer rendering')
-  .version('3.0.0')
+  .version('4.1.0')
   .requiredOption('-u, --url <url>',            'Target SPA URL to mirror')
   .option('-o, --output <dir>',                 'Output directory',             './pro-mirrored-site')
   .option('-d, --depth <n>',                    'Max crawl depth',              parseInt, 5)
@@ -39,7 +39,7 @@ const META_DIR   = path.join(OUTPUT_DIR, '_meta');
 
 console.log(chalk.bold.blue(`
 ╔══════════════════════════════════════════════════╗
-║       WEB MIRROR PRO  v3.0.0  🚀                  ║
+║       WEB MIRROR PRO  v4.1.0  🚀                  ║
 ║  SPA-Optimized · Headless · Scroll · Recursive   ║
 ╚══════════════════════════════════════════════════╝`));
 console.log(chalk.blue(`  Target       : ${chalk.white(opts.url)}`));
@@ -114,7 +114,7 @@ scrape(scrapeOptions)
 
     // Report
     const report = {
-      tool: 'Web Mirror Pro v3.0.0',
+      tool: 'Web Mirror Pro v4.1.0',
       target: opts.url,
       output: OUTPUT_DIR,
       crawledAt: new Date().toISOString(),
@@ -146,3 +146,4 @@ scrape(scrapeOptions)
     console.error(chalk.gray(err.stack));
     process.exit(1);
   });
+

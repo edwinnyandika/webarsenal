@@ -13,7 +13,7 @@
 
 <br/>
 
-[![Version](https://img.shields.io/badge/version-v4.0.0-0ff?style=for-the-badge&logo=semver&logoColor=black)](https://github.com/edwinnyandika/webarsenal/releases)
+[![Version](https://img.shields.io/badge/version-v4.1.0-0ff?style=for-the-badge&logo=semver&logoColor=black)](https://github.com/edwinnyandika/webarsenal/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-00ff88?style=for-the-badge)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Scripts](https://img.shields.io/badge/modules-110-ff6b35?style=for-the-badge)](https://github.com/edwinnyandika/webarsenal/tree/main)
@@ -363,3 +363,4 @@ MIT © [Edwin Nyandika](https://github.com/edwinnyandika) — see [LICENSE](LICE
 [⭐ Star on GitHub](https://github.com/edwinnyandika/webarsenal) • [🐛 Report Bug](https://github.com/edwinnyandika/webarsenal/issues) • [💡 Request Feature](https://github.com/edwinnyandika/webarsenal/issues) • [🌐 Visit Site](https://webarsenal.vercel.app)
 
 </div>
+

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
  * ╔═══════════════════════════════════════════════════════════════╗
- * ║        SITE EXTRACTOR PLAYWRIGHT  v3.0.0 — Headless Crawler    ║
+ * ║        SITE EXTRACTOR PLAYWRIGHT  v4.1.0 — Headless Crawler    ║
  * ║  Playwright Stealth · Queue · Asset Injection · Snapshots    ║
  * ╚═══════════════════════════════════════════════════════════════╝
  */
 
 'use strict';
-// [WebArsenal 3.0.0 Enhancements applied: BFS Queue, Proxy Support, Cookies, PDF Export]
+// [WebArsenal 4.1.0 Enhancements applied: BFS Queue, Proxy Support, Cookies, PDF Export]
 
 const { chromium }  = require('playwright-extra');
 const stealth       = require('puppeteer-extra-plugin-stealth')();
@@ -22,7 +22,7 @@ const { URL }       = require('url');
 program
   .name('site-extractor')
   .description('Headless site extractor built strictly on Playwright with stealth & raw network interception')
-  .version('3.0.0')
+  .version('4.1.0')
   .requiredOption('-u, --url <url>',      'Target URL to crawl')
   .option('-o, --output <dir>',           'Output dir',           './site')
   .option('--timeout <ms>',               'Page load timeout',    parseInt, 60000)
@@ -40,7 +40,7 @@ const OUTPUT_DIR = path.resolve(opts.output);
 
 console.log(chalk.bold.green(`
 ╔══════════════════════════════════════════════╗
-║    SITE EXTRACTOR PLAYWRIGHT  v3.0.0  🎭       ║
+║    SITE EXTRACTOR PLAYWRIGHT  v4.1.0  🎭       ║
 ║  Stealth · Network Interception · Snapshots  ║
 ╚══════════════════════════════════════════════╝`));
 console.log(chalk.green(`  Target : ${chalk.white(START_URL)}`));
@@ -141,3 +141,4 @@ const startTime = Date.now();
   console.log('');
 
 })();
+

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
  * ╔═══════════════════════════════════════════════════════════════╗
- * ║        SITE GRABBER PRO  v3.0.0  — Parallel Deep Crawler       ║
+ * ║        SITE GRABBER PRO  v4.1.0  — Parallel Deep Crawler       ║
  * ║  Stealth · BFS Queue · CSS Rewriting · Sitemap · Reports     ║
  * ╚═══════════════════════════════════════════════════════════════╝
  */
 
 'use strict';
-// [WebArsenal 3.0.0 Enhancements applied: robots.txt compliance, Link Graph JSON, CSV Reports]
+// [WebArsenal 4.1.0 Enhancements applied: robots.txt compliance, Link Graph JSON, CSV Reports]
 
 const puppeteer     = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
@@ -26,7 +26,7 @@ puppeteer.use(StealthPlugin());
 program
   .name('site-grabber')
   .description('Parallel deep site grabber with stealth and full asset/CSS rewriting')
-  .version('3.0.0')
+  .version('4.1.0')
   .requiredOption('-u, --url <url>',      'Start URL to grab')
   .option('-o, --output <dir>',           'Output directory',            './downloaded-site')
   .option('-d, --depth <n>',              'Max crawl depth',             parseInt, 4)
@@ -236,7 +236,7 @@ function generateOutputs() {
   fs.writeFileSync(path.join(OUTPUT_DIR, 'sitemap.xml'), xml);
 
   const report = {
-    tool: 'Site Grabber Pro v3.0.0', target: START_URL,
+    tool: 'Site Grabber Pro v4.1.0', target: START_URL,
     output: OUTPUT_DIR, crawledAt: new Date().toISOString(),
     duration: elapsed + 's',
     stats: { ...stats, totalMB: (stats.bytes / 1048576).toFixed(2) },
@@ -249,7 +249,7 @@ function generateOutputs() {
 (async () => {
   console.log(chalk.bold.cyan(`
 ╔══════════════════════════════════════════════╗
-║      SITE GRABBER PRO  v3.0.0  🕸️              ║
+║      SITE GRABBER PRO  v4.1.0  🕸️              ║
 ║  Stealth · Parallel · Full Asset Rewriting   ║
 ╚══════════════════════════════════════════════╝`));
   console.log(chalk.cyan(`  Target : ${chalk.white(START_URL)}`));

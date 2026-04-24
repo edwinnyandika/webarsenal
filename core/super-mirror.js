@@ -7,7 +7,7 @@
  */
 
 'use strict';
-// [WebArsenal 4.0.0 Enhancements applied: JS Injection, Form Detection, Webhooks]
+// [WebArsenal 4.1.0 Enhancements applied: JS Injection, Form Detection, Webhooks]
 
 const puppeteer       = require('puppeteer-extra');
 const StealthPlugin   = require('puppeteer-extra-plugin-stealth');
@@ -29,7 +29,7 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
 program
   .name('super-mirror')
   .description('Ultra-powered full-site cloner: stealth, recursive, concurrent, self-contained output')
-  .version('4.0.0')
+  .version('4.1.0')
   .requiredOption('-u, --url <url>',          'Target URL to mirror')
   .option('-o, --output <dir>',               'Output directory',              './super-mirrored-site')
   .option('-d, --depth <n>',                  'Max crawl depth',               parseInt, 6)
@@ -401,3 +401,4 @@ function serveOutput() {
 
   if (opts.serve) serveOutput();
 })();
+
